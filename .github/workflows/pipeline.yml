@@ -1,6 +1,6 @@
 image: python
 
-stages>
+stages:
 - build
 - test
 - deploy
