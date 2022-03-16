@@ -11,25 +11,25 @@ public class Main {
 
       ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-      System.out.println("Quantos funcionÃ¡rios serÃ£o inseridos?");
+      System.out.println("Quantos funcionários serão inseridos?");
       quantidade = s.nextInt();
       
-      //Foreach para popular os funcionÃ¡rios
+      //Foreach para popular os funcionários
       for(int i = 0; i < quantidade; i++) {
 
-         System.out.printf("FuncionÃ¡rio %d de %d:\n", i+1, quantidade);
+         System.out.printf("funcionário %d de %d:\n", i+1, quantidade);
 
-         System.out.println("Informe o cÃ³digo do funcionÃ¡rio: ");
+         System.out.println("Informe o código do funcionário: ");
          int codigo = s.nextInt();
 
-         System.out.println("Informe o tipo de funcionÃ¡rio: (1 para concursado e 2 para temporÃ¡rio)");
+         System.out.println("Informe o tipo de funcionário: (1 para concursado e 2 para temporário)");
          int tipo = s.nextInt();
 
          Funcionario funcionario = Funcionario.novo(tipo);
          funcionario.setCodigo(codigo);
          funcionario.setTipo(tipo);
 
-         System.out.println("Informe o salÃ¡rio do funcionÃ¡rio: ");
+         System.out.println("Informe o salário do funcionário: ");
          funcionario.setSalario_base(s.nextDouble());
 
          System.out.printf("Informe o tempo de contratado: (em %s)\n", funcionario.getTempoDescricao());
@@ -50,7 +50,7 @@ public class Main {
       //mostra os resultados
       System.out.println("\nResultados: \n");
       for(int i = 0; i < funcionarios.size(); i++) {
-         System.out.printf("FuncionÃ¡rio %d:\n", i+1);
+         System.out.printf("funcionário %d:\n", i+1);
          funcionarios.get(i).imprime();
       }
    }
