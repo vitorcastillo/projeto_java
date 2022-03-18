@@ -1,0 +1,31 @@
+name: python
+on:
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Olá, world!
+
+  test-tester:
+    runs-on: ubuntu-latest
+    environment:
+      name: tester
+      url: 'vitorcastillo.com.br'
+    needs: build
+    steps:
+      - name: Run a one-line script
+        run: echo Deploy ok!
+        
+  deploy-rev:
+    runs-on: ubuntu-latest
+    environment:
+      name: tester
+      url: 'vitorcastillo.com.br'
+    needs: test-tester
+    steps:
+      - name: Run a one-line script
+        run: echo Hello Mundão!
